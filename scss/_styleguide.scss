@@ -3,16 +3,18 @@ body.style-guide{
 }
 
 .style-guide-table-of-contents{
+	display: none;
 	padding: 1rem;
 
 	@include breakpoint(baby) {
 		bottom: 0;
+		display: block;
 		height: 100vh;
 		left: 0;
 		padding: 5rem 2rem 1rem;
 		position: fixed;
 		top: 0;
-		width: 12rem;
+		width: 14rem;
 	}
 
 	ul{
@@ -23,7 +25,7 @@ body.style-guide{
 .style-guide-body{
 
 	@include breakpoint(baby) {
-		margin: 0 2rem 4rem 12rem;
+		margin: 0 2rem 4rem 14rem;
 		max-width: 900px;
 	}
 }
