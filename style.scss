@@ -1,0 +1,59 @@
+/*!
+Theme Name: Chemistry Set
+Version: 1.0
+Author: Josiah Spence
+Author URI: http://codecarpenter.com
+Theme URI: http://codecarpenter.com
+Description: An Atomic Design Holy Grail theme.
+License: WTFPL
+License URI: http://en.wikipedia.org/wiki/WTFPL
+Tags: starter
+*/
+
+// Core
+@import 'scss/sass';
+@import 'scss/reset';
+@import 'scss/print';
+@import 'scss/styleguide';
+
+// Atoms
+@import 'scss/atoms/typography';
+@import 'scss/atoms/icons';
+@import 'scss/atoms/classes';
+@import 'scss/atoms/forms';
+@import 'scss/atoms/lists';
+@import 'scss/atoms/tables';
+@import 'scss/atoms/media';
+
+// Molecules
+@import 'scss/molecules/main-nav';
+@import 'scss/molecules/header-logo';
+
+// Organisms
+@import 'scss/organisms/footer';
+@import 'scss/organisms/header';
+
+// Templates
+@import 'scss/templates/pages';
+@import 'scss/templates/home';
+@import 'scss/templates/posts';
+
+
+///////////////////////////////////////////////////
+// Basic Structure
+///////////////////////////////////////////////////
+
+html{
+	background-color: white;
+	height:100%;
+	}
+
+body{
+	max-width:1000px;
+	margin: 0 $margin-standard;
+	position: relative;
+
+	@include breakpoint(base) {
+		margin:0 auto;
+		}
+	}

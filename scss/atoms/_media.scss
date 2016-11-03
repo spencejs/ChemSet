@@ -1,0 +1,15 @@
+/* ============================================================
+	Figures
+============================================================ */
+
+figure{
+	margin-bottom: $margin-standard;
+}
+
+figcaption {
+	color: $color-text-light;
+	font-size: .85rem;
+	line-height: 1.3334;
+	padding: $margin-standard/2 0;
+	clear: left;
+}

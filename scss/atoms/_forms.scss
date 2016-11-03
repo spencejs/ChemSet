@@ -1,0 +1,76 @@
+/* =============================================================
+	Forms
+============================================================  */
+
+
+label, form small{
+	display: block;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="search"], input[type="url"], input[type="password"], textarea, select{
+	border: 1px solid $color-text;
+	box-sizing: border-box;
+	font-size: 1rem;
+	outline: none;
+	padding: $margin-standard/4;
+	width: 100%;
+
+	&:focus, &:active{
+		border-color: $color-link;
+	}
+}
+
+button, input[type="submit"], input[type="button"]{
+	border: none;
+	background-color: $color-link;
+	color: white;
+	display: block;
+	font-size: 1rem;
+	font-weight: bold;
+	margin: $margin-standard/2 $margin-standard/2 0 0;
+	padding: .5rem .75rem;
+	text-align: right;
+	text-transform: uppercase;
+	transition: all .1s;
+	vertical-align: baseline;
+
+	@include breakpoint(baby) {
+		display: inline-block;
+	}
+
+	&:hover, &:focus, &:active{
+		background-color: $color-link-hover;
+	}
+}
+
+.wpcf7-radio span.wpcf7-list-item{
+	display: block;
+	margin: 0 0 $margin-standard/2;
+}
+
+.required:after{
+	content: '*';
+	color: $color-link;
+}
+
+
+/* =============================================================
+	Search Form
+============================================================  */
+
+.search-form {
+	display: flex;
+
+	label{
+		flex-grow: 1;
+		margin-right: .5rem;
+	}
+}
+
+input[type="search"].search-field{
+	padding: .5rem;
+}
+
+input[type="submit"].search-submit {
+	margin: 0;
+}

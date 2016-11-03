@@ -1,0 +1,290 @@
+body.style-guide{
+	max-width: inherit;
+}
+
+.style-guide-table-of-contents{
+	padding: 1rem;
+
+	@include breakpoint(baby) {
+		bottom: 0;
+		height: 100vh;
+		left: 0;
+		padding: 5rem 2rem 1rem;
+		position: fixed;
+		top: 0;
+		width: 12rem;
+	}
+
+	ul{
+		margin-left: 0;
+	}
+}
+
+.style-guide-body{
+
+	@include breakpoint(baby) {
+		margin: 0 2rem 4rem 12rem;
+		max-width: 900px;
+	}
+}
+
+///////////////////////////////////////////////////////
+// Styleguide Header
+///////////////////////////////////////////////////////
+
+.style-guide-header{
+	margin: 2rem 0;
+
+	@include breakpoint(baby) {
+		margin: 4rem 0 3rem;
+	}
+}
+
+.style-guide-page-title{
+	margin-bottom: 0;
+}
+
+.style-guide-nav{
+	background-color: #111;
+	box-shadow: 0 2px 2px #aaa;
+	color: white;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+
+	@include breakpoint(baby) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	ul{
+		list-style: none;
+		margin: .25rem .5rem;
+	}
+
+	li{
+		border-right: 1px solid #555;
+		display: inline-block;
+		padding: 0 .7rem 0 .5rem;
+
+		&:last-child{
+			border-right: none;
+		}
+	}
+
+	a{
+		color: white;
+
+		&:hover, &:active, &:focus{
+			border: none;
+			color: #fc4349;
+			text-decoration: none;
+		}
+	}
+}
+
+.style-guide-name{
+	margin: .25rem .5rem;
+}
+
+
+///////////////////////////////////////////////////////
+// Pattern Listing
+//////////////////////////////////////////////////////
+
+.style-guide-pattern{
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 1px 2px 2px #ddd;
+	margin-bottom: 3rem;
+
+	details{
+		margin-top: 2rem;
+		padding-top: 2rem;
+	}
+
+	summary{
+		border-top: 1px solid #ddd;
+		color: #aaa;
+		cursor: pointer;
+		padding-top: .5em;
+		transition: all .5s;
+
+		&:active, &:focus{
+			outline: none;
+		}
+	}
+
+	details[open] summary{
+		color: #555;
+		transition: all .5s;
+	}
+}
+
+.style-guide-pattern-header{
+	background-color: #fbf9f9;
+	padding: 1rem 1.5rem;
+}
+
+.style-guide-pattern-title{
+	margin-top: 0;
+
+	& + p{
+		margin: -1em 0 0;
+	}
+}
+
+.style-guide-pattern-content{
+	border-top: 1px solid #ddd;
+	padding: 3rem 1.5rem 2rem;
+}
+
+.style-guide-usage {
+	color: #888;
+	margin: 1rem 0;
+
+	&:before{
+		content: 'Example Usage:';
+		display: block;
+	}
+}
+
+.style-guide-output {
+	color: #888;
+	margin: 1rem 0;
+
+	&:before{
+		content: 'Example Output:';
+		display: block;
+	}
+}
+
+.style-guide-example{
+	background-color: #fbf9f9;
+	border-radius: 5px;
+	margin-bottom: $margin-standard;
+	padding: 1rem;
+
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+
+
+///////////////////////////////////////////////////////
+// Font Usage
+///////////////////////////////////////////////////////
+
+.primary-font-demo{
+	margin-bottom: $margin-standard*2;
+	position: relative;
+
+	&:after{
+		content: " #{$font-primary}.";
+	}
+
+	&:before{
+		content: "$font-primary";
+		color: $color-text-lighter;
+		position: absolute;
+		top: 1.4rem;
+	}
+}
+
+.secondary-font-demo{
+	font-family: $font-secondary;
+	margin-bottom: $margin-standard*2;
+	position: relative;
+
+	&:after{
+		content: " #{$font-secondary}.";
+	}
+
+	&:before{
+		content: "$font-secondary";
+		color: $color-text-lighter;
+		position: absolute;
+		top: 1.4rem;
+	}
+}
+
+
+///////////////////////////////////////////////////////
+// Color Swatches
+///////////////////////////////////////////////////////
+
+.swatches{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -.5rem;
+}
+
+.swatch-item{
+	flex: 1;
+	margin:0 .5rem;
+	position: relative;
+
+	&:before{
+		content:'';
+		display: block;
+		height: 5rem;
+		margin-bottom: .5rem;
+		width: 100%
+	}
+
+	&:after{
+		display: block;
+	}
+}
+
+.swatch-text{
+	&:before{
+		background-color: $color-text;
+	}
+
+	&:after{
+		content: "#{$color-text}";
+	}
+}
+
+.swatch-text-light{
+	&:before{
+		background-color: $color-text-light;
+	}
+
+	&:after{
+		content: "#{$color-text-light}";
+	}
+}
+
+.swatch-text-lighter{
+	&:before{
+		background-color: $color-text-lighter;
+	}
+
+	&:after{
+		content: "#{$color-text-lighter}";
+	}
+}
+
+.swatch-link{
+	&:before{
+		background-color: $color-link;
+	}
+
+	&:after{
+		content: "#{$color-link}";
+	}
+}
+
+.swatch-link-hover{
+	&:before{
+		background-color: $color-link-hover;
+	}
+
+	&:after{
+		content: "#{$color-link-hover}";
+	}
+}

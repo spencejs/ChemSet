@@ -1,0 +1,36 @@
+/* ============================================================
+	Tabular data
+============================================================ */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width: 100%;
+	margin-bottom: $margin-standard*2;
+}
+
+caption {
+	caption-side: bottom;
+	color: $color-text-light;
+	font-size: 0.75rem;
+	line-height: 1.333;
+	text-align: left;
+	margin: $margin-standard 0;
+}
+
+thead {
+	border-bottom: $border-thick;
+}
+
+td, th {
+	border-bottom: $border-basic;
+	border-collapse: collapse;
+	padding: $margin-standard/1.5;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	font-weight: 700;
+	padding-bottom: 0.5em; /* 8px */
+}

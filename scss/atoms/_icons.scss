@@ -1,0 +1,23 @@
+/* ============================================================
+	Icons
+============================================================ */
+
+svg {
+	fill: currentColor;
+}
+
+.icon{
+	height: $margin-standard;
+	width: $margin-standard;
+	vertical-align: -.1rem;
+
+	a &, button &{
+		transform: scale(.833333);
+		transition: .3s;
+	}
+
+	a:hover &, , a:active &, button:hover &{
+		transform: scale(1);
+		transition: .3s;
+	}
+}

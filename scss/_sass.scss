@@ -1,0 +1,56 @@
+/* ============================================================
+	SASS Goodies
+============================================================ */
+
+// Colors
+$color-text:			#000;
+$color-text-light:		#444;
+$color-text-lighter:	#969696;
+$color-link:			#b5121b;
+$color-link-hover:		#fc4349;
+
+// Spacing
+$margin-standard:		1.3rem;
+
+// Borders
+$border-basic:			1px solid $color-text-light;
+$border-thick:			2px solid $color-text-light;
+
+@mixin border-standard($color: $color-text-lighter, $side: bottom) {
+	border-#{$side}: 1px solid $color;
+}
+
+// Fonts
+$font-primary:			'Source Sans Pro', sans-serif;
+$font-secondary:		'Times New Roman', serif;
+
+// Breakpoints
+@mixin breakpoint($point) {
+	@if $point == egg {
+		@media (min-width: 20em) { @content; }
+		}
+	@if $point == embryo {
+		@media (min-width: 35em) { @content; }
+		}
+	@if $point == infant {
+		@media (min-width: 40em) { @content; }
+		}
+	@else if $point == baby {
+		@media (min-width: 50em) { @content; }
+		}
+	@else if $point == child {
+		@media (min-width: 60em) { @content; }
+		}
+	@else if $point == base {
+		@media (min-width: 65em) { @content; }
+		}
+	@else if $point == youngman {
+		@media (min-width: 85em) { @content; }
+		}
+	@else if $point == adult {
+		@media (min-width: 90em) { @content; }
+		}
+	@else if $point == old {
+		@media (min-width: 105em) { @content; }
+		}
+}
