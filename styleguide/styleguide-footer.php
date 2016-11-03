@@ -6,38 +6,42 @@
 
 	<script>
 	jQuery(document).ready(function($) {
-		var ToC = "<nav role='navigation' class='style-guide-table-of-contents'>" +
-		"<h5>On this page:</h5>" +
-		"<ul>";
 
-		var newLine, el, title, link;
+		// Build Nav Menu from Patterns
+		(function chemsetMenu(){
+			var ToC = "<nav role='navigation' class='style-guide-table-of-contents'>" +
+			"<h5>On this page:</h5>" +
+			"<ul>";
 
-		$(".style-guide-pattern-title").each(function() {
+			var newLine, el, title, link;
 
-		el = $(this);
-		title = el.text();
+			$(".style-guide-pattern-title").each(function() {
 
-		idname = title.replace(/\s+/g, '-').toLowerCase();
-		$(this).attr('id', idname);
+			el = $(this);
+			title = el.text();
 
-		link = "#" + el.attr("id");
+			idname = title.replace(/\s+/g, '-').toLowerCase();
+			$(this).attr('id', idname);
 
-		newLine =
-		"<li>" +
-		  "<a href='" + link + "'>" +
-			title +
-		  "</a>" +
-		"</li>";
+			link = "#" + el.attr("id");
 
-		ToC += newLine;
+			newLine =
+			"<li>" +
+				"<a href='" + link + "'>" +
+					title +
+				"</a>" +
+			"</li>";
 
-		});
+			ToC += newLine;
 
-		ToC +=
-		"</ul>" +
-		"</nav>";
+			});
 
-		$("body").prepend(ToC);
+			ToC +=
+			"</ul>" +
+			"</nav>";
+
+			$("body").prepend(ToC);
+		})();
 
 
 		// Scroll to Anchor Links
