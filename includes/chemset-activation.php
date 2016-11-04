@@ -8,7 +8,7 @@ if (is_admin() && 'themes.php' === $pagenow && isset( $_GET['activated'])) {
 	// on theme activation make sure there's a Home page
 	// create it if there isn't and set the Home page menu order to -1
 	// set WordPress to have the front page display the Home page as a static page
-	$default_pages = array('Home');
+	$default_pages = array('Home','Style Guide','Atoms','Molecules','Organisms');
 	$existing_pages = get_pages();
 
 	foreach ($existing_pages as $page) {
@@ -19,10 +19,9 @@ if (is_admin() && 'themes.php' === $pagenow && isset( $_GET['activated'])) {
 
   foreach ($pages_to_create as $new_page_title) {
 
-		// Add pages and insert lorem ipsum
+		// Add pages
 		$add_default_pages = array();
 		$add_default_pages['post_title'] = $new_page_title;
-		$add_default_pages['post_content'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, orci ac laoreet cursus, dolor sem luctus lorem, eget consequat magna felis a magna. Aliquam scelerisque condimentum ante, eget facilisis tortor lobortis in. In interdum venenatis justo eget consequat. Morbi commodo rhoncus mi nec pharetra. Aliquam erat volutpat. Mauris non lorem eu dolor hendrerit dapibus. Mauris mollis nisl quis sapien posuere consectetur. Nullam in sapien at nisi ornare bibendum at ut lectus. Pellentesque ut magna mauris. Nam viverra suscipit ligula, sed accumsan enim placerat nec. Cras vitae metus vel dolor ultrices sagittis. Duis venenatis augue sed risus laoreet congue ac ac leo. Donec fermentum accumsan libero sit amet iaculis. Duis tristique dictum enim, ac fringilla risus bibendum in. Nunc ornare, quam sit amet ultricies gravida, tortor mi malesuada urna, quis commodo dui nibh in lacus. Nunc vel tortor mi. Pellentesque vel urna a arcu adipiscing imperdiet vitae sit amet neque. Integer eu lectus et nunc dictum sagittis. Curabitur commodo vulputate fringilla. Sed eleifend, arcu convallis adipiscing congue, dui turpis commodo magna, et vehicula sapien turpis sit amet nisi.';
 		$add_default_pages['post_status'] = 'publish';
 		$add_default_pages['post_type'] = 'page';
 
@@ -39,6 +38,23 @@ if (is_admin() && 'themes.php' === $pagenow && isset( $_GET['activated'])) {
 	$home_menu_order['ID'] = $home->ID;
 	$home_menu_order['menu_order'] = -1;
 	wp_update_post($home_menu_order);
+
+	// Set Syle Guide as parent of Sub-pages
+	$style_guides = array( 'Atoms', 'Molecules', 'Organisms' );
+	$parent = get_page_by_title('Style Guide');
+	$parent_id = $parent->ID;
+
+
+	foreach ( $style_guides as $style_guide ) {
+
+		$guide_page = get_page_by_title( $style_guide );
+
+		$style_guide_parent = array();
+		$style_guide_parent['ID'] = $guide_page->ID;
+		$style_guide_parent['post_parent'] = $parent_id;
+		wp_update_post($style_guide_parent);
+
+	}
 
 	// set the permalink structure
 	if (get_option('permalink_structure') != '/%year%/%postname%/') {
