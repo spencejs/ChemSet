@@ -184,14 +184,9 @@ body.style-guide{
 	position: relative;
 
 	&:after{
-		content: " #{$font-primary}.";
-	}
-
-	&:before{
-		content: "$font-primary";
+		content: " $font-primary = #{$font-primary}.";
 		color: $color-text-lighter;
-		position: absolute;
-		top: 1.4rem;
+		display: block;
 	}
 }
 
@@ -201,14 +196,9 @@ body.style-guide{
 	position: relative;
 
 	&:after{
-		content: " #{$font-secondary}.";
-	}
-
-	&:before{
-		content: "$font-secondary";
+		content: " $font-secondary = #{$font-secondary}.";
 		color: $color-text-lighter;
-		position: absolute;
-		top: 1.4rem;
+		display: block;
 	}
 }
 
